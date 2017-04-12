@@ -12,12 +12,10 @@
 
 <p>
   <strong>first post:</strong>
-  <%= @user.microposts.first.content %>
-</p>
-
-<p>
-  <strong>recent post:</strong>
-  <%= @user.microposts.last.content %>
+  <% if @user.microposts.first.nil? then %>
+  <% else %>
+    <%= @user.microposts.first.content %>
+  <% end %>
 </p>
 
 
